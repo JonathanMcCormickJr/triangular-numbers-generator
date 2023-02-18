@@ -1,16 +1,18 @@
-def my_function():
-    num = 0
-    row_size = 0
-    
-    def generate_triangles():
-        row_size += 1
-        num += 1
-        for i in range(row_size):
-            print(num)
-        generate_triangles()
-        return
-    
-    return
-    # Maybe use recursion
+def generate_triangular(n):
+    """
+    Generates triangular numbers up to n.
+    """
+    current_num = 1
+    row = 1
+    while current_num <= n:
+        row_items = []
+        for i in range(row):
+            row_items.append(current_num)
+            current_num += 1
+            if current_num > n:
+                break
+        row_str = "  ".join([str(num) for num in row_items])
+        print(row_str + "\n")
+        row += 1
 
-my_function()
+generate_triangular(666)
