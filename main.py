@@ -12,9 +12,10 @@ def generate_triangular(n):
             current_num += 1
             if current_num > n:
                 break
+        row_str = ""
         for num in row_items:
-            space = " " * (max_spaces - len(str(num)))
-            row_str = space.join([str(num)])
+            space = (" " * (len(str(max_spaces)) - len(str(num)))) + " "
+            row_str += space + str(num)
         print(row_str + "\n")
         row += 1
 
